@@ -6,7 +6,7 @@ import {
   TableHead,
   TableCell,
 } from "@/components/ui/table"
-import { BeneficiaryAccount } from "@project/anchor"
+import { BeneficiaryAccount } from "@/src_codma"
 import { Loader2, X } from "lucide-react"
 import {
   ButtonHTMLAttributes,

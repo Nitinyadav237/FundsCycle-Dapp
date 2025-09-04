@@ -9,11 +9,20 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 })
 
-const eslintConfig = [...compat.extends('next/core-web-vitals', 'next/typescript'),
-   {
+const eslintConfig = [
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  {
     rules: {
-       "@typescript-eslint/no-explicit-any": "off",      // allow "any"
-      "@typescript-eslint/no-unused-vars": "off",       // disable unused var warnings
+      "@typescript-eslint/no-explicit-any": "off",  // allow "any"
+      "@typescript-eslint/no-unused-vars": "off",  // disable unused var warnings
+    },
+  },
+  {
+    files: ["src/src_codma/client/js/generated/**/*"], // ✅ only generated files
+    rules: {
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
     },
   },
 ]
