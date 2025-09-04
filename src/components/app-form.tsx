@@ -164,7 +164,7 @@ export function AppForm({
 
       // 2 second delay before redirect
       setTimeout(() => {
-        router.push("/accounts")
+        router.push("/account")
       }, 2000)
     } catch (err) {
       console.error("Error creating cycle:", err)

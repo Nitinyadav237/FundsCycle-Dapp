@@ -587,11 +587,11 @@ export default function AdminDashboard() {
 
         {/* Show message when no beneficiaries exist */}
         {beneficiaries.length === 0 && (
-          <Card className="mt-10 shadow-xl bg-white/80 backdrop-blur-sm border border-gray-200">
+          <Card className="mt-10 shadow-xl dark:bg-gray-900/80 backdrop-blur-sm border-2 border-gray-200 dark:border-gray-700">
             <CardContent className="flex flex-col items-center justify-center py-12">
               <Users className="w-16 h-16 text-gray-400 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No Beneficiaries Yet</h3>
-              <p className="text-gray-500 text-center max-w-md mb-4">
+              <h3 className="text-xl font-semibold  text-gray-900 dark:text-gray-100 mb-2">No Beneficiaries Yet</h3>
+              <p className="text-muted-foreground dark:text-gray-100 text-center max-w-md mb-4">
                 Add the first beneficiary using the form above. Remember, the admin should add themselves as a beneficiary to participate in the cycle.
               </p>
             </CardContent>

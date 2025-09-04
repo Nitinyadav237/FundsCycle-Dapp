@@ -7,5 +7,6 @@ export function toastTx(signature?: string, title = 'Transaction sent') {
   }
   toast(title, {
     description: <ExplorerLink transaction={signature} label="View Transaction" />,
+    duration:10000
   })
 }

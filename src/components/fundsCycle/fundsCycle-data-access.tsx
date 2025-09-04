@@ -306,7 +306,7 @@ export function useBeneficiaryData() {
     queryKey: ["beneficiaryData", walletAccount?.address],
     queryFn: async () => {
       if (!walletAccount?.address) {
-        throw new Error("Wallet not connected")
+        return null
       }
 
       try {
@@ -337,10 +337,10 @@ export function useBeneficiaryData() {
             },
           ],
         }).send()
-
-        if (accounts.length === 0) {
-          throw new Error("Not a beneficiary of any FundsCycle")
+        if (!accounts?.length || !accounts[0]?.account) {
+          return null
         }
+
 
         const account = accounts[0]
         const [base64String] = account.account.data
